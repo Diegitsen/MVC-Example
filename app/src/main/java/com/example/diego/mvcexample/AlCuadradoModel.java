@@ -6,11 +6,21 @@ package com.example.diego.mvcexample;
 
 public class AlCuadradoModel {
 
-    private String resultado;
+    private int resultado;
 
-    public String alCuadrado(String r)
+    AlCuadradoActivity a = new AlCuadradoActivity();
+
+    public void alCuadrado(String data)
     {
-        double d = Double.valueOf(r)* Double.valueOf(r);
-        return String.valueOf(d);
+        if(data.equals(""))
+        {
+            a.showError("Campo vacio");
+        }
+        else
+        {
+            resultado = Integer.parseInt(data)*Integer.parseInt(data);;
+            a.showResult(String.valueOf(resultado));
+        }
+
     }
 }

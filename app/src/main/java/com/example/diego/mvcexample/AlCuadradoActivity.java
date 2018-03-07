@@ -2,6 +2,7 @@ package com.example.diego.mvcexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,10 +20,19 @@ public class AlCuadradoActivity extends AppCompatActivity {
         etCuadrado = findViewById(R.id.etCuadrado);
     }
 
-    private void calcular()
+    public void showError(String e)
     {
+        tvCuadrado.setText(e);
+    }
 
-        m.alCuadrado(etCuadrado.toString());
+    public void showResult(String r)
+    {
+        tvCuadrado.setText(r);
+    }
+
+    public void calcular(View v)
+    {
+        m.alCuadrado(etCuadrado.getText().toString());
     }
 
 }
